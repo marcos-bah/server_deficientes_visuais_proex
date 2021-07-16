@@ -1,5 +1,6 @@
-import 'package:server_deficientes_visuais_proex/server_deficientes_visuais_proex.dart' as server_deficientes_visuais_proex;
+import 'package:server_deficientes_visuais_proex/home.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${server_deficientes_visuais_proex.calculate()}!');
+void main() async {
+  var home = Home();
+  home.initServer();
 }
