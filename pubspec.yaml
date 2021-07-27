@@ -9,6 +9,8 @@ environment:
 dependencies:
   shelf: ^1.1.4
   shelf_router: ^1.1.1
+  objectdb: ^1.2.1+1
+  path_provider: ^2.0.2
 #  path: ^1.7.0
 
 dev_dependencies:
