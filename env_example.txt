@@ -1,0 +1,8 @@
+API_PORT = 4000
+
+BD_HOST = localhost
+BD_PORT = 5432
+BD_NAME = app_proex
+BD_USERNAME = postgres
+BD_PASSWORD = 123456
+
