@@ -2,7 +2,7 @@
 
 ### BACKEND
 
-- Criar um banco no postgres workbench, exemplo: smarkio_app
+- Criar um banco no postgres com o nome: app_proex
 
 - Entrar no repositório backend do projeto com o terminal e executar o seguinte comando para instalar as dependências:
 ```bash
@@ -10,7 +10,7 @@ yarn
 ```
 
 - Após todas as dependências instaladas criar na raiz da pasta backend um arquivo `.env`
-e preencher as informações conforme se encontra no arquivo `.env_example`. 
+e preencher as informações conforme se encontra no arquivo `env_example.txt`. 
 
 - Rodar a migration, executando no terminal:
 ```bash
