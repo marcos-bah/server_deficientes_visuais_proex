@@ -17,9 +17,6 @@ class User {
 
     @Column()
     role: string;
-
-    @Column({ nullable: true })
-    token: string;
     
     @CreateDateColumn()
     created_at: Date

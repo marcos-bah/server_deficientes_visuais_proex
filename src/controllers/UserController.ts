@@ -6,7 +6,7 @@ import { UserService } from "../services/UserService";
 class UserController {
     async create(req: Request, resp: Response) {
         // Dados recebidos na requisição
-        const { name, email, password, role, token } = req.body;
+        const { name, email, password, role } = req.body;
 
         // Validação dos campos recebidos no corpo da requisição
         const schema = yup.object().shape({
@@ -24,7 +24,7 @@ class UserController {
         // Conexão com o banco de dados chamando a service
         const userService = new UserService();
         try {
-            const user = await userService.create(name, email, password, role, token);
+            const user = await userService.create(name, email, password, role);
             if(user.status === httpStatus.CREATED){
                 return resp.status(httpStatus.CREATED).json(user.obj);
             } else {

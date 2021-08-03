@@ -2,6 +2,7 @@ import { getCustomRepository, Repository } from 'typeorm';
 import { User } from '../entities/User';
 import { UserRepository } from '../repositories/UserRepository';
 import httpStatus from 'http-status';
+import { hash } from 'bcryptjs';
 
 class UserService {
     private connectUser: Repository<User>;
@@ -9,16 +10,23 @@ class UserService {
         this.connectUser = getCustomRepository(UserRepository);
     }
 
-    async create(name: string, email: string, password: string, role: string, token: string) {
+    async create(name: string, email: string, password: string, role: string) {
         try {
             const userExist = await this.connectUser.findOne({ email });
             if (userExist) {
                 return { status: httpStatus.BAD_REQUEST, message: 'Usuário já existe' };
             }
 
-            const user = this.connectUser.create({ name, email, password, role, token });
-            console.log('POST user', user);
+            const passwordHash = await hash(password, 8);
+
+            const user = this.connectUser.create({ 
+                name, 
+                email, 
+                password: passwordHash, 
+                role 
+            });
             await this.connectUser.save(user);
+
             delete user.password;
             return { status: httpStatus.CREATED, obj: user };
         } catch (error) {
@@ -29,7 +37,7 @@ class UserService {
     async ready() {
         try {
             return await this.connectUser.find({
-                select: ['name', 'email', 'role', 'token', 'created_at']
+                select: ['id', 'name', 'email', 'role', 'created_at']
             });
         } catch (error) {
             throw error;

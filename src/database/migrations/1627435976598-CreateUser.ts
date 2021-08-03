@@ -27,11 +27,7 @@ export class CreateUser1627435976598 implements MigrationInterface {
                     {
                         name: 'role',
                         type: 'varchar',
-                    },
-                    {
-                        name: 'token',
-                        type: 'varchar',
-                    },
+                    },  
                     {
                         name: 'created_at',
                         type: 'timestamp',
