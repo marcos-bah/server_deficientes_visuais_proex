@@ -2,7 +2,7 @@
   "name": "server_deficientes_visuais_proex",
   "version": "1.0.0",
   "engines": {
-    "yarn": "1.19.1"
+    "yarn": "1.22.5"
   },
   "main": "index.js",
   "repository": "https://github.com/marcos-bah/server_deficientes_visuais_proex.git",
