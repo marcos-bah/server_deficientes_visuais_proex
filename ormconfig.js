@@ -5,6 +5,9 @@ module.exports = {
     "migrations": ['src/database/migrations/*.ts'],
     "entities": ['src/entities/*.ts'],
     "ssl": "true",
+    "dialectOptions": {
+        "ssl": {"require":"true" }
+      },
     "cli": {
         "migrationsDir": [
             './src/database/migrations'
