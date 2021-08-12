@@ -1,6 +1,9 @@
 {
   "name": "server_deficientes_visuais_proex",
   "version": "1.0.0",
+  "engines": {
+    "yarn": "1.19.1"
+  },
   "main": "index.js",
   "repository": "https://github.com/marcos-bah/server_deficientes_visuais_proex.git",
   "author": "ygor-salles <ygorsallesaniceto@gmail.com>",
